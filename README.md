@@ -20,6 +20,29 @@ Or in VS Code, run the `AssignmentOne` launch configuration.
 
 ---
 
+## Presentation order for the video
+
+Each source file begins with `Presentation order NN/11` so the code can be shown in
+the same sequence as the talk:
+
+| # | File | What the talk covers there |
+|---|---|---|
+| 01 | `HealthProfessional.java` | encapsulation: fields, validation, read-only access |
+| 02 | `Doctor.java` | inheritance: the shared doctor layer |
+| 03 | `GeneralPractitioner.java` | inheritance: chained constructors |
+| 04 | `Specialist.java` | inheritance: `super(...)` |
+| 05 | `Nurse.java` | inheritance: deliberately outside `Doctor` |
+| 06 | `Dietitian.java` | inheritance: own behaviour |
+| 07 | `Patient.java` | encapsulation: phone validation, identity |
+| 08 | `Appointment.java` | polymorphism: field typed as the parent |
+| 09 | `ClinicSchedule.java` | encapsulation: configurable roster |
+| 10 | `AppointmentManager.java` | double-booking check via `equals` |
+| 11 | `AssignmentOne.java` | polymorphism: one loop, no cast |
+
+Lines marked `PILLAR n` in the source are the exact spots to point at.
+
+---
+
 ## Class map
 
 ```
