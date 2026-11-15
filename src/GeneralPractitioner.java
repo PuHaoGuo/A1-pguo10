@@ -29,4 +29,4 @@ public class GeneralPractitioner extends HealthProfessional {
                 ", Bulk billing: " + bulkBilling +
                 ", Years of experience: " + yearsOfExperience;
     }
-}     
+} 

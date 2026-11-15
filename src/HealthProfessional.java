@@ -50,4 +50,4 @@ public abstract class HealthProfessional {
     public int hashCode() {
         return Objects.hash(id);
     }
-}       
+}        

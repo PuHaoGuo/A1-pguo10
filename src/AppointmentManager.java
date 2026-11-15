@@ -91,4 +91,4 @@ public String cancelAppointment(String phoneNumber) {
     public List<Appointment> getAllAppointments() {
         return new ArrayList<>(appointments);
     }
-}
+}      

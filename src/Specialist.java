@@ -21,4 +21,6 @@ public class Specialist extends HealthProfessional {
     public String toString() {
         return super.toString() + ", Sub-specialty: " + subSpecialty;
     }
-}                                                                               
+}                       
+
+

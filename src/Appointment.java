@@ -33,4 +33,4 @@ public class Appointment implements Comparable<Appointment> {
     public String toString() {
         return "Appointment [" + timeSlot + "] - " + professional.getName() + " (" + professional.getJobTitle() + ") - " + patient.getName() + " (" + patient.getPhoneNumber() + ")";
     }
-}     
+}    
