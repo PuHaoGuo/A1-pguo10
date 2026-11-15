@@ -2,6 +2,8 @@ import java.time.DayOfWeek;
 import java.util.Set;
 
 /**
+ * <b>Presentation order 05/11 | Part 2 | pillars: inheritance, polymorphism</b>
+ *
  * A nurse: the blood samples and day-to-day patient care end of the clinic.
  *
  * <p>A nurse deliberately does <em>not</em> extend {@link Doctor}. If the class sat

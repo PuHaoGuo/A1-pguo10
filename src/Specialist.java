@@ -2,6 +2,8 @@ import java.time.DayOfWeek;
 import java.util.Set;
 
 /**
+ * <b>Presentation order 04/11 | Part 2 | pillars: inheritance, polymorphism</b>
+ *
  * A specialist such as a cardiologist or a paediatrician, who sees patients
  * referred by a general practitioner.
  */

@@ -1,4 +1,6 @@
 /**
+ * <b>Presentation order 07/11 | Part 4 | pillars: encapsulation</b>
+ *
  * The person an appointment belongs to.
  *
  * <p>Patient is a class in its own right rather than two String fields buried inside
