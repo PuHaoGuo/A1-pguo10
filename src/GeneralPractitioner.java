@@ -1,13 +1,40 @@
+import java.time.DayOfWeek;
 import java.util.Set;
 
-public class GeneralPractitioner extends HealthProfessional {
-    private boolean bulkBilling;
-    private int yearsOfExperience;
+/**
+ * A general practitioner: the first point of contact for most patients.
+ *
+ * <p>On top of everything {@link Doctor} already provides, a GP records whether they
+ * bulk bill, because that changes what the patient pays at the desk.</p>
+ */
+public class GeneralPractitioner extends Doctor {
 
-    public GeneralPractitioner(int id, String name, Set<String> workingDays, boolean bulkBilling, int yearsOfExperience) {
-        super(id, name, workingDays);
+    private final boolean bulkBilling;
+
+    /**
+     * Fully specified general practitioner.
+     */
+    public GeneralPractitioner(int id, String name, Set<DayOfWeek> workingDays,
+            boolean bulkBilling, int yearsOfExperience) {
+        super(id, name, workingDays, yearsOfExperience);
         this.bulkBilling = bulkBilling;
-        this.yearsOfExperience = yearsOfExperience;
+    }
+
+    /**
+     * A GP whose experience was not recorded yet: defaults to zero years, which is
+     * the only honest assumption for a newly registered practitioner.
+     */
+    public GeneralPractitioner(int id, String name, Set<DayOfWeek> workingDays, boolean bulkBilling) {
+        this(id, name, workingDays, bulkBilling, 0);
+    }
+
+    /** A GP on the standard Monday-to-Friday roster who does not bulk bill. */
+    public GeneralPractitioner(int id, String name) {
+        this(id, name, defaultWorkingDays(), false, 0);
+    }
+
+    public boolean isBulkBilling() {
+        return bulkBilling;
     }
 
     @Override
@@ -15,18 +42,13 @@ public class GeneralPractitioner extends HealthProfessional {
         return "General Practitioner";
     }
 
-    public boolean isBulkBilling() {
-        return bulkBilling;
-    }
-
-    public int getYearsOfExperience() {
-        return yearsOfExperience;
+    @Override
+    public String performPrimaryDuty() {
+        return "Treats everyday illness and injury, and refers patients on when needed.";
     }
 
     @Override
     public String toString() {
-        return super.toString() +
-                ", Bulk billing: " + bulkBilling +
-                ", Years of experience: " + yearsOfExperience;
+        return super.toString() + " | Bulk billing: " + (bulkBilling ? "yes" : "no");
     }
-} 
+}
