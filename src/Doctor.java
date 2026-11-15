@@ -2,8 +2,6 @@ import java.time.DayOfWeek;
 import java.util.Set;
 
 /**
- * <b>Presentation order 02/11 | Part 2 | pillars: inheritance, abstraction</b>
- *
  * A health professional who is allowed to practise medicine.
  *
  * <p>This level exists because a general practitioner and a specialist share two
@@ -15,10 +13,9 @@ import java.util.Set;
  */
 public abstract class Doctor extends HealthProfessional {
 
-    // PILLAR 2 (inheritance): yearsOfExperience and prescribe() belong to every
-    // doctor, so they live here once instead of being copied into both subclasses.
-    // PILLAR 3 (abstraction): still abstract - a "doctor with no specialty" is not
-    // a thing the clinic can employ.
+    // Years of experience and prescribe() belong to every doctor, so they are written
+    // here once instead of being duplicated in both subclasses. The class stays
+    // abstract because a doctor with no specialty is not something the clinic employs.
 
     private final int yearsOfExperience;
 

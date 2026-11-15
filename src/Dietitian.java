@@ -2,8 +2,6 @@ import java.time.DayOfWeek;
 import java.util.Set;
 
 /**
- * <b>Presentation order 06/11 | Part 2 | pillars: inheritance, polymorphism</b>
- *
  * A dietitian, who plans what patients eat rather than what they take.
  */
 public class Dietitian extends HealthProfessional {

@@ -4,8 +4,6 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * <b>Presentation order 09/11 | Part 5 | pillars: encapsulation</b>
- *
  * The fixed daily roster of bookable time slots.
  *
  * <p>The brief asks how to represent the schedule so that it can change later

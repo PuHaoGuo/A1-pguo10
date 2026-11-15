@@ -7,8 +7,6 @@ import java.util.Objects;
 import java.util.Set;
 
 /**
- * <b>Presentation order 01/11 | Part 1 | pillars: encapsulation, abstraction</b>
- *
  * The common parent of every type of health professional the clinic employs.
  *
  * <p>Everything that is true of <em>any</em> health professional lives here: the
@@ -29,16 +27,15 @@ import java.util.Set;
  */
 public abstract class HealthProfessional {
 
-    // PILLAR 3 (abstraction): the class is abstract, so "new HealthProfessional(...)"
-    // is a compile error. This is intentional - see getJobTitle / performPrimaryDuty.
+    // The class is abstract, so "new HealthProfessional(...)" is a compile error by
+    // design; the two abstract methods further down are what a subclass must supply.
 
     /** Used by the two-argument constructor when the caller does not supply a working week. */
     private static final Set<DayOfWeek> DEFAULT_WORKING_DAYS =
             EnumSet.range(DayOfWeek.MONDAY, DayOfWeek.FRIDAY);
 
-    // PILLAR 1 (encapsulation): every field is private and final. They are written
-    // once, in the constructor, and only after validation, so the object can never
-    // be observed in an invalid state.
+    // Private and final: written once, inside the constructor, and only after
+    // validation, so the object can never be observed in an invalid state.
     private final int id;
     private final String name;
     private final Set<DayOfWeek> workingDays;

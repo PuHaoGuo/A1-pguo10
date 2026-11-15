@@ -2,8 +2,6 @@ import java.time.DayOfWeek;
 import java.util.Set;
 
 /**
- * <b>Presentation order 03/11 | Part 2 | pillars: inheritance, polymorphism</b>
- *
  * A general practitioner: the first point of contact for most patients.
  *
  * <p>On top of everything {@link Doctor} already provides, a GP records whether they

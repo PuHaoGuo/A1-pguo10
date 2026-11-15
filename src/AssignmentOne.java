@@ -7,8 +7,6 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * <b>Presentation order 11/11 | Parts 3 and 6 | pillar: polymorphism</b>
- *
  * PROG2004 Assignment 1 - appointment system for a health service.
  *
  * <p>This class holds the {@code main} method that demonstrates the whole system.
@@ -182,8 +180,8 @@ public class AssignmentOne {
         System.out.println();
 
         int position = 1;
-        // PILLAR 4 (polymorphism): one list, one loop, no instanceof and no cast.
-        // The object itself decides which performPrimaryDuty() runs.
+        // One list, one loop: no instanceof and no cast. The object itself decides
+        // which performPrimaryDuty() runs.
         for (HealthProfessional professional : professionals) {
             System.out.println(position + ". " + professional);
             System.out.println("   Duty: " + professional.performPrimaryDuty());

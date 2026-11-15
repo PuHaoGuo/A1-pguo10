@@ -4,8 +4,6 @@ import java.util.Collections;
 import java.util.List;
 
 /**
- * <b>Presentation order 10/11 | Part 5 | pillars: encapsulation, polymorphism</b>
- *
  * Holds and manages every appointment the clinic has taken.
  *
  * <p>The collection is an {@code ArrayList} of {@code Appointment}. An array-backed

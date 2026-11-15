@@ -1,8 +1,6 @@
 import java.time.LocalTime;
 
 /**
- * <b>Presentation order 08/11 | Part 4 | pillars: polymorphism, encapsulation</b>
- *
  * One booking: a patient, the health professional they are seeing, and the time.
  *
  * <p>The professional field is declared as {@link HealthProfessional}, not as a
@@ -16,8 +14,8 @@ import java.time.LocalTime;
 public class Appointment implements Comparable<Appointment> {
 
     private final Patient patient;
-    // PILLAR 4 (polymorphism): typed as the parent, so one appointment class accepts
-    // a GeneralPractitioner, a Specialist, a Nurse or a Dietitian with no changes.
+    // Typed as the parent, so one appointment class accepts a GeneralPractitioner,
+    // a Specialist, a Nurse or a Dietitian without any changes.
     private final HealthProfessional professional;
     private final LocalTime time;
 
