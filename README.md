@@ -1,4 +1,4 @@
-﻿# PROG2004 Assessment 1 - Appointment System for a Health Service
+# PROG2004 Assessment 1 - Appointment System for a Health Service
 
 Student: PuHao Guo - 25258677
 
