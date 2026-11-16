@@ -1,6 +1,6 @@
-# PROG2004 Assessment 1 — Appointment System for a Health Service
+﻿# PROG2004 Assessment 1 - Appointment System for a Health Service
 
-Student: PuHao Guo — 25258677
+Student: PuHao Guo - 25258677
 
 An object-oriented backbone for a clinic appointment system, written in Java.
 There is no user interface: `AssignmentOne.main` is a scripted simulation that
@@ -72,13 +72,13 @@ The classes build on each other, so this is the easiest order to read them in:
 
 ## Design decisions, part by part
 
-### Part 1 — HealthProfessional
+### Part 1 - HealthProfessional
 
 * **`abstract`, not concrete.** There is no such thing as a health professional
   with no specialty, so the type cannot be instantiated. Every subclass is then
   forced to answer `getJobTitle()` and `performPrimaryDuty()`.
 * **Immutable.** All fields are `final` and are only written in the constructor,
-  after validation. An object therefore cannot be created — or later mutated —
+  after validation. An object therefore cannot be created - or later mutated -
   into an invalid state.
 * **Controlled access.** Getters only. The working-day set is a `Set<DayOfWeek>`
   held internally and handed out through `Collections.unmodifiableSet`, and the
@@ -89,7 +89,7 @@ The classes build on each other, so this is the easiest order to read them in:
   with a message that says what was wrong.
 * **Two constructors.** `HealthProfessional(id, name, workingDays)` for the
   general case and `HealthProfessional(id, name)` which defaults the roster to
-  Monday–Friday — the sensible default the brief asks about.
+  Monday-Friday - the sensible default the brief asks about.
 * **`equals`/`hashCode`.** Two professionals are the same professional when they
   are the same concrete type and hold the same ID. This is what the double-booking
   check relies on, and it is why a clash is still detected when a second object
@@ -98,9 +98,9 @@ The classes build on each other, so this is the easiest order to read them in:
 `java.time.DayOfWeek` is used instead of raw strings so that an invalid day such
 as `"Wensday"` cannot be stored at all.
 
-### Part 2 — Four specialisations
+### Part 2 - Four specialisations
 
-`GeneralPractitioner`, `Specialist`, `Nurse`, `Dietitian` — one GP plus three other
+`GeneralPractitioner`, `Specialist`, `Nurse`, `Dietitian` - one GP plus three other
 types, as required. Each adds its own fields and its own behaviour:
 
 | Type | Extra state | Behaviour only it has |
@@ -125,14 +125,14 @@ types, as required. Each adds its own fields and its own behaviour:
   subclass appends its own, so the shared details are formatted in exactly one
   place.
 
-### Part 3 — Working with the objects
+### Part 3 - Working with the objects
 
 One `List<HealthProfessional>` holds all seven professionals and a single loop
 prints them and calls `performPrimaryDuty()`. There is no `instanceof` and no
 cast: each object answers for itself. Adding a fifth type would require no change
 to this loop at all.
 
-### Part 4 — Appointment
+### Part 4 - Appointment
 
 * The professional field is typed as `HealthProfessional`, so one appointment class
   works with every subtype.
@@ -145,7 +145,7 @@ to this loop at all.
 * `toString` prints the whole appointment including the **full details of the
   chosen professional**, not only their name.
 
-### Part 5 — AppointmentManager
+### Part 5 - AppointmentManager
 
 * **`ArrayList<Appointment>`** for the collection: appointments are appended,
   scanned item by item, and displayed in order, and there are only a few dozen a
@@ -166,9 +166,9 @@ to this loop at all.
 * `displayAppointments(heading, list)` keeps the printing loop in one place instead
   of repeating it for every view.
 
-### Part 6 — End-to-end demonstration
+### Part 6 - End-to-end demonstration
 
-`AssignmentOne.main` runs Parts 1–6 in order. The Part 6 scenario books five
+`AssignmentOne.main` runs Parts 1-6 in order. The Part 6 scenario books five
 appointments across four professional types, shows a double booking and an
 out-of-schedule time being refused, displays the collection in time order, filters
 it two different ways, cancels by phone and by ID + time, then displays the
@@ -183,7 +183,7 @@ Both normal and error cases are demonstrated for every operation.
 
 Use this while recording the video.
 
-**1. Encapsulation** — `HealthProfessional`, `Patient`, `Appointment`,
+**1. Encapsulation** - `HealthProfessional`, `Patient`, `Appointment`,
 `ClinicSchedule`.
 Private `final` fields, validation in the constructor, getters only, defensive
 copies, and `getWorkingDays()`/`getAllAppointments()` returning read-only or copied
@@ -191,20 +191,20 @@ collections. Nothing outside a class can put it into an invalid state. Chosen
 because a health professional's ID and roster must never be reassigned by accident
 in the middle of a booking.
 
-**2. Inheritance** — `HealthProfessional` → `Doctor` → `GeneralPractitioner` /
-`Specialist`, and `HealthProfessional` → `Nurse` / `Dietitian`.
+**2. Inheritance** - `HealthProfessional` -> `Doctor` -> `GeneralPractitioner` /
+`Specialist`, and `HealthProfessional` -> `Nurse` / `Dietitian`.
 Shared state and behaviour are written once in the parent; subclasses add only what
 differs and call `super(...)` / `super.toString()`. Chosen so that adding a fifth
 type cannot introduce a second, divergent copy of the ID/name/roster rules.
 
-**3. Abstraction** — `HealthProfessional` and `Doctor` are `abstract`;
+**3. Abstraction** - `HealthProfessional` and `Doctor` are `abstract`;
 `getJobTitle()` and `performPrimaryDuty()` are abstract methods.
 The rest of the system deals with `HealthProfessional` and never needs to know the
 concrete types. Chosen because "a health professional with no specialty" is not a
 thing the clinic can employ, and because it forces every new subtype to describe
 itself.
 
-**4. Polymorphism** — `performPrimaryDuty()` and `toString()` overridden in each
+**4. Polymorphism** - `performPrimaryDuty()` and `toString()` overridden in each
 subclass, called through a `HealthProfessional` reference in the Part 3 loop; the
 `Appointment` field typed as `HealthProfessional` accepts any subtype.
 Chosen so the printing loop and the appointment class never need a per-type branch.
@@ -225,8 +225,8 @@ Repetitive `javadoc` on trivial getters has been deliberately left out.
 - [ ] GitHub repository link in the submission comments
       (private repo: invite the tutor and unit assessor as collaborators)
 - [ ] WakaTime report attached as `A1-<username>-WakaTime.[png/jpg/pdf]`
-- [ ] Video link (≤ 5 minutes) in the submission comments
-- [ ] GenAI declaration in the comments — see below
+- [ ] Video link (<= 5 minutes) in the submission comments
+- [ ] GenAI declaration in the comments - see below
 
 ### GenAI declaration
 
